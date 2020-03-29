@@ -1,6 +1,6 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/cloud-run-grpc-auth/src",
+  "sourceRoot": "apps/server/src",
   "projects": {
     "grpc-helper": {
       "type": "library",
@@ -11,13 +11,13 @@
         "tsConfigPath": "libs/grpc-helper/tsconfig.lib.json"
       }
     },
-    "cloud-run-grpc-auth": {
+    "server": {
       "type": "application",
-      "root": "apps/cloud-run-grpc-auth",
+      "root": "apps/server",
       "entryFile": "main",
-      "sourceRoot": "apps/cloud-run-grpc-auth/src",
+      "sourceRoot": "apps/server/src",
       "compilerOptions": {
-        "tsConfigPath": "apps/cloud-run-grpc-auth/tsconfig.app.json"
+        "tsConfigPath": "apps/server/tsconfig.app.json"
       }
     },
     "client": {
@@ -32,8 +32,8 @@
   },
   "compilerOptions": {
     "webpack": true,
-    "tsConfigPath": "apps/cloud-run-grpc-auth/tsconfig.app.json"
+    "tsConfigPath": "apps/server/tsconfig.app.json"
   },
   "monorepo": true,
-  "root": "apps/cloud-run-grpc-auth"
+  "root": "apps/server"
 }

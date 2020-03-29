@@ -8,7 +8,7 @@ const logger = new Logger('Main');
 
 async function bootstrap() {
   const port = process.env.PORT || '5000';
-  const address = process.env.ADDRESS || '0.0.0.0';
+  const address = '0.0.0.0';
 
   const protoPath = join(process.cwd(), 'protos/hello-world.proto');
   const microserviceOptions: MicroserviceOptions = {
@@ -20,9 +20,12 @@ async function bootstrap() {
     },
   };
 
-  const app = await NestFactory.createMicroservice(AppModule, microserviceOptions);
+  const app = await NestFactory.createMicroservice(
+    AppModule,
+    microserviceOptions,
+  );
   app.listen(() => {
-    logger.log(`Started GRPC server on ${microserviceOptions.options.url}`);
+    logger.debug(`Started GRPC server on ${microserviceOptions.options.url}`);
   });
 }
 
