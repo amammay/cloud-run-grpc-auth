@@ -4,7 +4,7 @@ WORKDIR /app
 
 FROM base as dev
 ARG project
-COPY ./package*.json ./K
+COPY ./package*.json ./
 RUN npm install --production
 RUN cp -R node_modules /tmp/node_modules
 
